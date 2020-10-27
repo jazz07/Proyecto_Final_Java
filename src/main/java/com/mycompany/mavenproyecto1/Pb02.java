@@ -84,7 +84,7 @@ JButton boton1= new JButton("Agregar");
         jPanel1.add(jScrollPane1);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setText("Desayunos");
+        jLabel1.setText("Almuerzos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

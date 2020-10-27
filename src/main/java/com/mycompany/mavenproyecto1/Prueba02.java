@@ -33,31 +33,32 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
       Pb03.setVisible(false);
       Pb04.setVisible(false);
       
-      
+      btnAnterior.setEnabled(false);
+//       btnSiguiente.setEnabled(true);
       btnSiguiente.addActionListener(this);
       btnAnterior.addActionListener(this);
-      deshabilitarBotones();
+//      deshabilitarBotones();
       
       propiedadesTabla();
       
     
     }
-    private void deshabilitarBotones(){
-        if(Pb01.isVisible()){
-            btnAnterior.setEnabled(false);
-            btnSiguiente.setEnabled(true);
-        }else if(Pb02.isVisible()){
-            btnAnterior.setEnabled(true);
-            btnSiguiente.setEnabled(true);
-        }else if(Pb03.isVisible()){
-            btnAnterior.setEnabled(true);
-            btnSiguiente.setEnabled(true);
-        }else if (Pb04.isVisible()){
-            btnAnterior.setEnabled(true);
-            btnSiguiente.setEnabled(true);
-        }
-        
-    }
+//    private void deshabilitarBotones(){
+//        if(Pb01.isVisible()){
+//            btnAnterior.setEnabled(false);
+//            btnSiguiente.setEnabled(true);
+//        }else if(Pb02.isVisible()){
+//            btnAnterior.setEnabled(true);
+//            btnSiguiente.setEnabled(true);
+//        }else if(Pb03.isVisible()){
+//            btnAnterior.setEnabled(true);
+//            btnSiguiente.setEnabled(true);
+//        }else if (Pb04.isVisible()){
+//            btnAnterior.setEnabled(true);
+//            btnSiguiente.setEnabled(true);
+//        }
+//        
+//    }
     
  private void propiedadesTabla(){
        String titulos[] = {"Nombre","Precio"};
@@ -286,38 +287,61 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object evt = e.getSource();
         if(evt.equals(btnAnterior)){
-          Pb04.setVisible(true);
-          Pb03.setVisible(true);
-          Pb02.setVisible(true);
-          Pb01.setVisible(true);
+          if(Pb02.isVisible()){
+            contenedor.add(Pb01);
+            Pb01.setVisible(true);
+            Pb02.setVisible(false);
+            Pb03.setVisible(false);
+            Pb04.setVisible(false);
+            btnAnterior.setEnabled(false);
+             btnSiguiente.setEnabled(true);
+           
+          }
+          else if(Pb03.isVisible()){
+            contenedor.add(Pb02);
+            Pb01.setVisible(false);
+            Pb02.setVisible(true);
+            Pb03.setVisible(false);
+            Pb04.setVisible(false);
+          }
+          else if(Pb04.isVisible()){
+            contenedor.add(Pb03);
+            Pb01.setVisible(false);
+            Pb02.setVisible(false);
+            Pb03.setVisible(true);
+            Pb04.setVisible(false);
+          }
           
-          contenedor.add(Pb01);
           
           contenedor.validate();
-          deshabilitarBotones();
+//          deshabilitarBotones();
         }
         else if(evt.equals(btnSiguiente)){
-            Pb02.setVisible(true);
-           
-            Pb01.setVisible(false);
-            
+              if(Pb01.isVisible()){
             contenedor.add(Pb02);
-            deshabilitarBotones();
-
-                    if (evt.equals(btnSiguiente)) {
-                    Pb03.setVisible(true);
-                    Pb02.setVisible(false);
-                    
-                    contenedor.add(Pb03);
-                    
-                    if (evt.equals(btnSiguiente)){
-                        Pb04.setVisible(true);
-                        Pb03.setVisible(false);
-                        
-                        contenedor.add(Pb04);
-                        
-                        deshabilitarBotones();
-                    }
+            Pb01.setVisible(false);
+            Pb02.setVisible(true);
+            Pb03.setVisible(false);
+            Pb04.setVisible(false);
+          }
+          else if(Pb02.isVisible()){
+            contenedor.add(Pb03);
+            Pb01.setVisible(false);
+            Pb02.setVisible(false);
+            Pb03.setVisible(true);
+            Pb04.setVisible(false);
+          }
+          else if(Pb03.isVisible()){
+            contenedor.add(Pb04);
+            Pb01.setVisible(false);
+            Pb02.setVisible(false);
+            Pb03.setVisible(false);
+            Pb04.setVisible(true);
+            
+            btnSiguiente.setEnabled(false);
+            btnAnterior.setEnabled(true);
+          }
+              contenedor.validate();
         
                     }
                     
@@ -329,4 +353,4 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
 //    DefaultListModel modelo = (DefaultListModel) Lista1.getModel();
 //
 //}
-}
+
