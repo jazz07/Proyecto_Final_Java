@@ -38,6 +38,7 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
 //        deshabilitar();
       
       PanelDeslizamiento.setVisible(false);
+      PanelTotal.setVisible(false);
       btnAnterior.setEnabled(false);
 //       btnSiguiente.setEnabled(true);
       btnSiguiente.addActionListener(this);
