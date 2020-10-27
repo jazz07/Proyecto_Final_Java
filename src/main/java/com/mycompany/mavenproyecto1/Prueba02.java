@@ -5,9 +5,11 @@
  */
 package com.mycompany.mavenproyecto1;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,6 +21,11 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
         Pb02 Pb02 = new  Pb02();
         Pb03 Pb03 = new  Pb03();
         Pb04 Pb04 = new  Pb04();
+        PanelM panelM = new PanelM();
+        PanelM2 panelM2 = new PanelM2();
+        PanelM3 panelM3 = new PanelM3();
+        
+        CardLayout vista;
     /**
      * Creates new form ProyectoNuevo01
      */
@@ -27,35 +34,46 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
         
         this.setLocationRelativeTo(this);
         
-      contenedor.add(Pb01);
-      Pb01.setVisible(true);
-      Pb02.setVisible(false);
-      Pb03.setVisible(false);
-      Pb04.setVisible(false);
+//      contenedor.add(panelM);
+//        deshabilitar();
       
+      PanelDeslizamiento.setVisible(false);
       btnAnterior.setEnabled(false);
 //       btnSiguiente.setEnabled(true);
       btnSiguiente.addActionListener(this);
       btnAnterior.addActionListener(this);
+    
 //      deshabilitarBotones();
       
       propiedadesTabla();
       
-    
+    vista = (CardLayout) contenedor.getLayout();
     }
-//    private void deshabilitarBotones(){
+//    private void deshabilitar(){
 //        if(Pb01.isVisible()){
-//            btnAnterior.setEnabled(false);
-//            btnSiguiente.setEnabled(true);
-//        }else if(Pb02.isVisible()){
-//            btnAnterior.setEnabled(true);
-//            btnSiguiente.setEnabled(true);
-//        }else if(Pb03.isVisible()){
-//            btnAnterior.setEnabled(true);
-//            btnSiguiente.setEnabled(true);
-//        }else if (Pb04.isVisible()){
-//            btnAnterior.setEnabled(true);
-//            btnSiguiente.setEnabled(true);
+//            PanelDeslizamiento.setVisible(true);
+//            panelM.setVisible(false);
+//            panelM2.setVisible(false);
+//            panelM3.setVisible(false);
+//            PanelTotal.setVisible(true);
+//        }else if(panelM.isVisible()){
+//              PanelDeslizamiento.setVisible(false);
+//            Pb01.setVisible(false);
+//            panelM2.setVisible(false);
+//            panelM3.setVisible(false);
+//            PanelTotal.setVisible(false);
+//        }else if(panelM2.isVisible()){
+//              PanelDeslizamiento.setVisible(false);
+//            panelM.setVisible(false);
+//            Pb01.setVisible(false);
+//            panelM3.setVisible(false);
+//            PanelTotal.setVisible(false);
+//        }else if (panelM3.isVisible()){
+//               PanelDeslizamiento.setVisible(false);
+//            panelM.setVisible(false);
+//            panelM2.setVisible(false);
+//            Pb01.setVisible(false);
+//            PanelTotal.setVisible(false);
 //        }
 //        
 //    }
@@ -75,104 +93,53 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        contenedor = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        btnSiguiente = new javax.swing.JButton();
-        btnAnterior = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        btnAceptar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
+        PanelTotal = new javax.swing.JPanel();
+        PanelEnvioDatos = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        btnAceptar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaContenido = new javax.swing.JTable();
+        PanelDeslizamiento = new javax.swing.JPanel();
+        btnSiguiente = new javax.swing.JButton();
+        btnAnterior = new javax.swing.JButton();
+        PanelOptions = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnPrimero = new javax.swing.JButton();
+        btnSegundo = new javax.swing.JButton();
+        btnTercero = new javax.swing.JButton();
+        btnCuarto = new javax.swing.JButton();
+        Secundario = new javax.swing.JPanel();
+        contenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 174, 31));
 
-        contenedor.setBackground(new java.awt.Color(255, 255, 255));
-        contenedor.setLayout(new java.awt.BorderLayout());
+        PanelTotal.setBackground(new java.awt.Color(255, 255, 255));
+        PanelTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
+        PanelTotal.setLayout(new java.awt.BorderLayout());
 
-        btnSiguiente.setText("Siguiente");
-        jPanel1.add(btnSiguiente);
-
-        btnAnterior.setText("Anterior");
-        jPanel1.add(btnAnterior);
-
-        contenedor.add(jPanel1, java.awt.BorderLayout.PAGE_END);
-
-        jPanel2.setBackground(new java.awt.Color(255, 249, 251));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
-
-        jLabel1.setFont(new java.awt.Font("Odin Rounded", 1, 24)); // NOI18N
-        jLabel1.setText("Menu");
-
-        jButton3.setText("jButton3");
-
-        jButton4.setText("jButton3");
-
-        jButton5.setText("jButton3");
-
-        jButton6.setText("jButton3");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
-        );
-
-        contenedor.add(jPanel2, java.awt.BorderLayout.LINE_START);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
-
-        btnAceptar.setText("Aceptar");
-
-        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel4.setLayout(new java.awt.GridLayout());
+        PanelEnvioDatos.setBackground(new java.awt.Color(0, 0, 0));
+        PanelEnvioDatos.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Total");
-        jPanel4.add(jLabel2);
+        PanelEnvioDatos.add(jLabel2);
+        PanelEnvioDatos.add(jTextField1);
+
+        btnAceptar.setText("Aceptar");
+        PanelEnvioDatos.add(btnAceptar);
 
         btnEliminar.setBackground(new java.awt.Color(0, 0, 0));
         btnEliminar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
+        PanelEnvioDatos.add(btnEliminar);
+
+        PanelTotal.add(PanelEnvioDatos, java.awt.BorderLayout.PAGE_END);
 
         TablaContenido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -184,47 +151,152 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
         ));
         jScrollPane2.setViewportView(TablaContenido);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEliminar)
-                    .addComponent(btnAceptar))
-                .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 122, Short.MAX_VALUE))
+        PanelTotal.add(jScrollPane2, java.awt.BorderLayout.LINE_START);
+
+        getContentPane().add(PanelTotal, java.awt.BorderLayout.LINE_END);
+
+        btnSiguiente.setText("Siguiente");
+        PanelDeslizamiento.add(btnSiguiente);
+
+        btnAnterior.setText("Anterior");
+        btnAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnteriorActionPerformed(evt);
+            }
+        });
+        PanelDeslizamiento.add(btnAnterior);
+
+        getContentPane().add(PanelDeslizamiento, java.awt.BorderLayout.PAGE_END);
+
+        PanelOptions.setBackground(new java.awt.Color(255, 249, 251));
+        PanelOptions.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
+
+        jLabel1.setFont(new java.awt.Font("Odin Rounded", 1, 24)); // NOI18N
+        jLabel1.setText("Menu");
+
+        btnPrimero.setText("jButton3");
+        btnPrimero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrimeroActionPerformed(evt);
+            }
+        });
+
+        btnSegundo.setText("jButton3");
+        btnSegundo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSegundoActionPerformed(evt);
+            }
+        });
+
+        btnTercero.setText("jButton3");
+        btnTercero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTerceroActionPerformed(evt);
+            }
+        });
+
+        btnCuarto.setText("jButton3");
+        btnCuarto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCuartoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelOptionsLayout = new javax.swing.GroupLayout(PanelOptions);
+        PanelOptions.setLayout(PanelOptionsLayout);
+        PanelOptionsLayout.setHorizontalGroup(
+            PanelOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnPrimero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnSegundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnTercero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelOptionsLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelOptionsLayout.createSequentialGroup()
+                .addComponent(btnCuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnAceptar))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(btnEliminar)
+        PanelOptionsLayout.setVerticalGroup(
+            PanelOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOptionsLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(btnPrimero, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSegundo, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnTercero, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        contenedor.add(jPanel3, java.awt.BorderLayout.LINE_END);
+        getContentPane().add(PanelOptions, java.awt.BorderLayout.LINE_START);
 
+        Secundario.setLayout(new java.awt.CardLayout());
+        getContentPane().add(Secundario, java.awt.BorderLayout.CENTER);
+
+        contenedor.setBackground(new java.awt.Color(255, 255, 255));
+        contenedor.setLayout(new java.awt.CardLayout());
         getContentPane().add(contenedor, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeroActionPerformed
+            contenedor.add(panelM);
+            panelM.setVisible(true);
+            Pb01.setVisible(false);
+            panelM2.setVisible(false);
+            panelM3.setVisible(false);
+            PanelTotal.setVisible(false);
+            contenedor.validate();;
+            PanelDeslizamiento.setVisible(false);
+    }//GEN-LAST:event_btnPrimeroActionPerformed
+
+    private void btnSegundoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSegundoActionPerformed
+            contenedor.add(Pb01);
+            Pb01.setVisible(true);
+            PanelTotal.setVisible(true);
+            PanelDeslizamiento.setVisible(true);
+            panelM.setVisible(false);
+            panelM2.setVisible(false);
+            panelM3.setVisible(false);
+            
+            contenedor.validate();
+            
+    }//GEN-LAST:event_btnSegundoActionPerformed
+
+    private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAnteriorActionPerformed
+
+    private void btnTerceroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTerceroActionPerformed
+         contenedor.add(panelM2);
+            panelM.setVisible(false);
+            panelM2.setVisible(true);
+            Pb01.setVisible(false);
+            panelM3.setVisible(false);
+            PanelTotal.setVisible(false);
+            PanelDeslizamiento.setVisible(false);
+            
+            contenedor.validate();;
+            
+    }//GEN-LAST:event_btnTerceroActionPerformed
+
+    private void btnCuartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuartoActionPerformed
+        contenedor.add(panelM3);
+            panelM.setVisible(false);
+            panelM2.setVisible(false);
+            panelM3.setVisible(true);
+            Pb01.setVisible(false);
+            PanelTotal.setVisible(false);
+              PanelDeslizamiento.setVisible(false);
+            contenedor.validate();;
+          
+    }//GEN-LAST:event_btnCuartoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,29 +335,30 @@ public class Prueba02 extends javax.swing.JFrame implements ActionListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PanelDeslizamiento;
+    private javax.swing.JPanel PanelEnvioDatos;
+    private javax.swing.JPanel PanelOptions;
+    private javax.swing.JPanel PanelTotal;
+    private javax.swing.JPanel Secundario;
     private javax.swing.JTable TablaContenido;
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnAnterior;
+    private javax.swing.JButton btnCuarto;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnPrimero;
+    private javax.swing.JButton btnSegundo;
     private javax.swing.JButton btnSiguiente;
+    private javax.swing.JButton btnTercero;
     private javax.swing.JPanel contenedor;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Object evt = e.getSource();
+        Object evt = e.getSource();  
         if(evt.equals(btnAnterior)){
           if(Pb02.isVisible()){
             contenedor.add(Pb01);
